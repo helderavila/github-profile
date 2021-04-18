@@ -26,6 +26,10 @@ export default function Home() {
     })
   }
 
+  function handleSubmitForm(data) {
+    onSubmit(data, false)
+  }
+
   return (
     <>
       <Head>
@@ -36,7 +40,7 @@ export default function Home() {
         <h1>github-profile ⚡️</h1>
         <form 
           className={styles.formContainer}
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(handleSubmitForm)}
         >
           <input 
             name="user" 
