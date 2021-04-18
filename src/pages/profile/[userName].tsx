@@ -14,8 +14,6 @@ export default function Profile() {
   const { user, onSubmit, repositories } = useUser()
   const { userName } = router.query
 
-  console.log(user)
-
   useEffect(() => {
     if (!user.userLoaded && userName) onSubmit({ user: userName }, true)
   },[userName])
