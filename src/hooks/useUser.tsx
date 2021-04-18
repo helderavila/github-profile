@@ -77,7 +77,7 @@ export function UserProvider({ children }) {
       })
       loadRepos(response.data.repos_url)
       setSearchLoading(false)
-      if (fromProfile) router.push(`/profile/${data.user}`)
+      if (!fromProfile) router.push(`/profile/${data.user}`)
     } catch (err) {
       if (fromProfile) router.push('/')
       setSearchLoading(false)
