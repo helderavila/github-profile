@@ -1,3 +1,15 @@
+@keyframes fadeIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .container {
   margin: 20rem auto;
   max-width: 1120px;
@@ -7,11 +19,25 @@
   align-items: center;
   flex-direction: column;
 
+  animation: fadeIn 2s;
+
+
   h1 {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
 
 .formContainer {
   display: flex;
@@ -26,6 +52,8 @@
     padding: 1rem;
     margin-right: 1.5rem;
     color: #fff;
+    height: 3.5rem;
+
   }
 
   button {
@@ -35,12 +63,28 @@
     font-weight: bold;
     padding: 1rem;
     border-radius: 5px;
+    width: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+
 
     transition: filter 0.2s;
+
+    svg {
+      animation: rotate 0.8s linear infinite;
+    }
 
     &:hover {
       filter: brightness(0.8);
     }
+  }
+
+  button[disabled] {
+    filter: brightness(0.8);
+    cursor: not-allowed;
   }
 
 }
